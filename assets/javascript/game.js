@@ -27,7 +27,7 @@ $('#newGame').click(function() {
 
     totalValue = 0;
     
-
+//game restarts when player clicks new game
     for (var i = 0; i < 4; i++) {
         crystalRandomNumber[i] = randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
         randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
@@ -85,15 +85,25 @@ $('.blue').click(function(){
 
 
 //player wins when total score counter = random number; display player win or loss message; 
+
+var userWins=0;
+var userLosses=0;
+$('#userWinCount').text("Wins: " + userWins);
+$('#userLossCount').text("Losses: " + userLosses);
+
 function compare() {
 if (totalValue === 0) {
     $('#statusMessage').text("Try and collect enough crystals to equal exactly the pot!");
 } else if (totalValue === randomNumber) {
     $('#statusMessage').text("Congratulations! You got it!");
     disableCrystalButton();
+    userWins++;
+    $('#userWinCount').text("Wins: " + userWins);
 } else if (totalValue > randomNumber) {
     $('#statusMessage').text("Too bad, you went over! Try again!"); 
     disableCrystalButton();
+    userLosses++;
+    $('#userLossCount').text("Losses: " + userLosses);
 
 }
 };
@@ -101,6 +111,8 @@ if (totalValue === 0) {
 function refresh() {
     $('#totalScoreDisplay').text("Total Score: " + totalValue);
     $('#randomNumberDisplay').text("Number to match: " + randomNumber);
+    $('#userWinCount').text("Wins: " + userWins);
+    $('#userLossCount').text("Losses: " + userLosses);
 
 
 }
@@ -112,7 +124,7 @@ function disableCrystalButton() {
 function enableCrystalButton() {
     $('.crystal').prop("disabled", false);
 }
-//game restarts when player clicks new game
+
 
 //RESET new game: new random number; new crystal values; users score and score counter will reset to zero
 
