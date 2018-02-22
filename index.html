@@ -17,18 +17,19 @@
 <body>
 
 <h1 class="jumbotron text-center">Crystal Game</h1>
-<div class="container col-md-12 border">
+<div class="container col-md-8 border">
     <div>You will be given a random number at the start of the game. <br> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. <br> You win the game by matching your total score to random number, you lose the game if your total score goes above random number. <br> The value of each crystal is hidden from you until you click on it. <br> Each time when the game starts, the game will change the values of each crystal. <br> Click 'New Game' to start the game!</div><br>
 </div>
 <br>
 
 <div class="row">
-    <div class="container col-md-12 text-center">
+    <div class="container col-md-6 text-center border">
         <div id="statusMessage"></div>
         <br>
     </div>
-
-    <div class="container col-md-12 text-center"> 
+</div>
+<div class="row">
+    <div class="container col-md-6 text-center border"> 
         <button id="newGame" class="btn btn-info" type="button">New Game</button>
         <button class="red crystal btn btn-danger" type="button">Red</button>
         <button class="green crystal btn btn-success" type="button">Green</button>
@@ -37,11 +38,11 @@
     </div>
 </div>
 <hr>
-<div class="row">
-    <div class="container col-md-4 border text-center">
-        <div id="totalScoreDisplay"></div>
-        <div id="randomNumberDisplay"></div>
-    </div>
+<div class="row text-center">
+    <div class="col-md-3"></div>
+    <div id="totalScoreDisplay" class="col-md-3"></div>
+    <div id="randomNumberDisplay" class="col-md-3"></div>
+    <div class="col-md-3"></div>
 </div>
 <hr>
 <div id="scoreCard" class="container col-md-4 text-center border">
