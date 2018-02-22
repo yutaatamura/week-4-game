@@ -33,7 +33,7 @@ $('#newGame').click(function() {
         randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
     };
     randomNumber = randomNumberGenerator(minRandomNumber, maxRandomNumber);
-    $('#randomNumberDisplay').text("Number to match: " + randomNumber);
+    $('#randomNumber').text(randomNumber);
     console.log("random number=" + randomNumber);
     crystalRedValue = crystalRandomNumber[0];
     crystalGreenValue = crystalRandomNumber[1];
@@ -55,29 +55,29 @@ $('#newGame').click(function() {
 //total score counter; sum variable
 var totalValue = 0; 
 compare();
-$('#totalScoreDisplay').text("Total Score: " + totalValue);
+$('#totalScore').text(totalValue);
 $('.red').click(function(){
     
     totalValue = Number(totalValue) + crystalRedValue;
-    $('#totalScoreDisplay').text("Total Score: " + totalValue);
+    $('#totalScore').text(totalValue);
     compare();
 });
 $('.green').click(function(){
     
     totalValue = Number(totalValue) + crystalGreenValue;
-    $('#totalScoreDisplay').text("Total Score: " + totalValue);
+    $('#totalScore').text(totalValue);
     compare();
 });
 $('.yellow').click(function(){
     
     totalValue = Number(totalValue) + crystalYellowValue;
-    $('#totalScoreDisplay').text("Total Score: " + totalValue);
+    $('#totalScore').text(totalValue);
     compare();
 });
 $('.blue').click(function(){
     
     totalValue = Number(totalValue) + crystalBlueValue;
-    $('#totalScoreDisplay').text("Total Score: " + totalValue);
+    $('#totalScore').text(totalValue);
     compare();
 });
 
@@ -93,14 +93,14 @@ $('#userLossCount').text("Losses: " + userLosses);
 
 function compare() {
 if (totalValue === 0) {
-    $('#statusMessage').text("Try and collect enough crystals to equal exactly the pot!");
+    $('#statusMessage').text("Try and collect enough crystals to equal the pot!");
 } else if (totalValue === randomNumber) {
-    $('#statusMessage').text("Congratulations! You got it!");
+    $('#statusMessage').text("Congratulations! You snuck if by the dragon!");
     disableCrystalButton();
     userWins++;
     $('#userWinCount').text("Wins: " + userWins);
 } else if (totalValue > randomNumber) {
-    $('#statusMessage').text("Too bad, you went over! Try again!"); 
+    $('#statusMessage').text("Too selfish! The dragon caught you. Try again!"); 
     disableCrystalButton();
     userLosses++;
     $('#userLossCount').text("Losses: " + userLosses);
@@ -109,8 +109,8 @@ if (totalValue === 0) {
 };
 
 function refresh() {
-    $('#totalScoreDisplay').text("Total Score: " + totalValue);
-    $('#randomNumberDisplay').text("Number to match: " + randomNumber);
+    $('#totalScore').text(totalValue);
+    $('#randomNumber').text(randomNumber);
     $('#userWinCount').text("Wins: " + userWins);
     $('#userLossCount').text("Losses: " + userLosses);
 

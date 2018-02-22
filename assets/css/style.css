@@ -1,0 +1,89 @@
+.jumbotron {
+    margin-bottom: 0 !important;
+}
+
+#content {
+    background-image: url("https://4.bp.blogspot.com/-YfuoYkffJMg/VGPEa7Csx7I/AAAAAAAAAFU/5a_PR-__CtU/w1200-h630-p-k-no-nu/dragon%2Bhoard.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    
+}
+
+.directions {
+    background:rgba(255, 255, 255, 0.6);
+}
+
+#statusMessage {
+    background:rgba(255, 255, 255, 0.6);
+}
+
+#totalScoreDisplay {
+    background:rgba(255, 255, 255, 0.6);
+}
+
+#newGameContainer {
+    text-align: right;
+}
+
+#randomNumberDisplay {
+    background:rgba(173, 5, 5, 0.6);
+    color: rgb(240, 227, 227);
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    text-align: left;
+    font-size: 20px;
+}
+
+#randomNumber {
+    font-weight: bold;
+    color: rgb(243, 243, 49); 
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+#totalScoreDisplay {
+    background:rgba(245, 220, 0, 0.6);
+    color: rgb(240, 227, 227);
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    text-align: center;
+    font-size: 20px;
+}
+
+#totalScore {
+    font-weight: bold;
+    color: rgb(56, 247, 56); 
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+#scoreCard {
+    background:rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 766px) {
+    img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #newGameContainer {
+        text-align: center !important;
+    }
+
+    #totalScoreDisplay {
+        text-align: left;
+    }
+
+}
+/* .thumbnail {
+    width: 150px;
+    height: 150px;
+    overflow: auto;
+} */
+
+/* .img-thumbnail {
+    
+    width: 100%;
+    height: auto;
+    display: block;
+}    */
