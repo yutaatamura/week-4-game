@@ -10,7 +10,6 @@ function randomNumberGenerator(min, max) {
 };
 //display randomNumber in HTML
 
-
 //4 crystals; each with a random value between 1-12
 var crystalRandomNumber = [];
 var crystalRedValue;
@@ -94,7 +93,7 @@ function compare() {
 if (totalValue === 0) {
     $('#statusMessage').text("Try and collect enough crystals to equal the pot!");
 } else if (totalValue === randomNumber) {
-    $('#statusMessage').text("Congratulations! You snuck if by the dragon!");
+    $('#statusMessage').text("Congratulations! You snuck the treasure by the dragon!");
     disableCrystalButton();
     userWins++;
     $('#userWinCount').text("Wins: " + userWins);
