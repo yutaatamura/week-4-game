@@ -9,41 +9,49 @@ $(document).ready(function() {
     function randomNumberGenerator(min, max) {
         return Math.floor(Math.random()*(max-min+1)+min);
     };
-    //display randomNumber in HTML
 
     //4 crystals; each with a random value between 1-12
     var crystalRandomNumber = [];
-    var crystalRedValue;
-    var crystalGreenValue;
-    var crystalYellowValue;
-    var crystalBlueValue;
-
     var crystalMinRandomNumber = 1;
     var crystalMaxRandomNumber = 12;
 
+    var crystal = {
+        red : ""
+        ,
+        green : ""
+        ,
+        yellow : ""
+        ,
+        blue : ""
+        
+    }
+   
+    //hide crystals at load until 'new game' clicked
     disableCrystalButton();
 
-    //RESET new game: new random number; new crystal values; users score and score counter will reset to zero
+    //START & RESET new game: new random number; new crystal values; users score and score counter will reset to zero
     $('#newGame').click(function() {
 
         totalValue = 0;
         
-        //game restarts when player clicks new game
+        //iterate generator function through crystal array to assign value to each crystal
         for (var i = 0; i < 4; i++) {
             crystalRandomNumber[i] = randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
-            randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
         };
+
+        //generate random number; display random number
         randomNumber = randomNumberGenerator(minRandomNumber, maxRandomNumber);
         $('#randomNumber').text(randomNumber);
         console.log("random number=" + randomNumber);
-        crystalRedValue = crystalRandomNumber[0];
-        crystalGreenValue = crystalRandomNumber[1];
-        crystalYellowValue = crystalRandomNumber[2];
-        crystalBlueValue = crystalRandomNumber[3];
-            console.log("red=" + crystalRedValue);
-            console.log("green=" + crystalGreenValue);
-            console.log("yellow=" + crystalYellowValue);
-            console.log("blue=" + crystalBlueValue);
+
+        crystal.red = crystalRandomNumber[0];
+        crystal.green = crystalRandomNumber[1];
+        crystal.yellow = crystalRandomNumber[2];
+        crystal.blue = crystalRandomNumber[3];
+            console.log("red=" + crystal.red);
+            console.log("green=" + crystal.green);
+            console.log("yellow=" + crystal.yellow);
+            console.log("blue=" + crystal.blue);
         refresh();
         compare();
         enableCrystalButton();
@@ -60,25 +68,25 @@ $(document).ready(function() {
 
     $('.red').click(function(){
         
-        totalValue = Number(totalValue) + crystalRedValue;
+        totalValue = Number(totalValue) + crystal.red;
         $('#totalScore').text(totalValue);
         compare();
     });
     $('.green').click(function(){
         
-        totalValue = Number(totalValue) + crystalGreenValue;
+        totalValue = Number(totalValue) + crystal.green;
         $('#totalScore').text(totalValue);
         compare();
     });
     $('.yellow').click(function(){
         
-        totalValue = Number(totalValue) + crystalYellowValue;
+        totalValue = Number(totalValue) + crystal.yellow;
         $('#totalScore').text(totalValue);
         compare();
     });
     $('.blue').click(function(){
         
-        totalValue = Number(totalValue) + crystalBlueValue;
+        totalValue = Number(totalValue) + crystal.blue;
         $('#totalScore').text(totalValue);
         compare();
     });
