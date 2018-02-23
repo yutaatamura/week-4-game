@@ -3,14 +3,12 @@
 
 var minRandomNumber = 19;
 var maxRandomNumber = 120;
-
 var randomNumber;
 
 function randomNumberGenerator(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 };
 //display randomNumber in HTML
-
 
 
 //4 crystals; each with a random value between 1-12
@@ -27,7 +25,7 @@ $('#newGame').click(function() {
 
     totalValue = 0;
     
-//game restarts when player clicks new game
+    //game restarts when player clicks new game
     for (var i = 0; i < 4; i++) {
         crystalRandomNumber[i] = randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
         randomNumberGenerator(crystalMinRandomNumber, crystalMaxRandomNumber);
@@ -56,6 +54,7 @@ $('#newGame').click(function() {
 var totalValue = 0; 
 compare();
 $('#totalScore').text(totalValue);
+
 $('.red').click(function(){
     
     totalValue = Number(totalValue) + crystalRedValue;

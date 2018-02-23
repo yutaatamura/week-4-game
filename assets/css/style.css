@@ -1,5 +1,11 @@
 .jumbotron {
     margin-bottom: 0 !important;
+    background-image: url("https://www.3alamtaney.com/wp-content/uploads/2017/04/maxresdefault-2.jpg");
+    background-size: cover;
+    background-position: center;
+    font-weight: bold;
+    font-size: 46px;
+    text-shadow: 2px 2px rgb(250, 250, 250);
 }
 
 #content {
@@ -58,6 +64,7 @@
 
 #scoreCard {
     background:rgba(255, 255, 255, 0.6);
+    overflow: auto;
 }
 
 @media screen and (max-width: 766px) {
